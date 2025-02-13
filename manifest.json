@@ -1,0 +1,43 @@
+{
+    "manifest_version": 3,
+    "name": "WordReference Anki Cloze",
+    "version": "1.0",
+    "description": "Create Anki cloze cards from WordReference examples.",
+    "minimum_chrome_version": "92",
+    "permissions": [
+      "storage",
+      "activeTab",
+      "scripting",
+      "downloads"
+    ],
+    "host_permissions": [
+      "*://www.wordreference.com/*"
+    ],
+    "content_scripts": [
+      {
+        "matches": ["*://www.wordreference.com/*"],
+        "js": ["content.js"],
+        "type": "module"
+      }
+    ],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "/images/icon16.png",
+        "48": "/images/icon48.png",
+        "128": "/images/icon128.png"
+      }
+    },
+    "icons": {
+      "16": "/images/icon16.png",
+      "48": "/images/icon48.png",
+      "128": "/images/icon128.png"
+    },
+    "web_accessible_resources": [
+      {
+        "resources": ["string-similarity.min.js"],
+        "matches": ["<all_urls>"]
+      }
+    ]
+    
+  }
